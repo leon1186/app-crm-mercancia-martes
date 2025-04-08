@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { usuarios } from '../services/database'
 import './Login.css'
+import { alertaRedireccion,alertError } from '../helpers/funciones'
+import { useNavigate } from 'react-router-dom'
 // rafce-> crea un componente funcional arrow.
 // rfce-> crea un compnente functional regular.
 
@@ -11,6 +13,7 @@ function Login(){
    const [getPassword,setPassword]=useState()// esta linea de codigo se hace por cada valor que ingreses por teclado.el metodo get es para consultar a una base de datos.
    //const [getEmail,setEmail]=useState("correo")// esta linea de codigo se hace por cada valor que ingreses por teclado.
    // estas funciones creadas van a depender del componente login.
+   let redireccion=useNavigate()
    function buscarUsuario(){
       let usuarioEncontrado=usuarios.find((item)=>getUser==item.usuario && getPassword==item.contrasena)// item es una variable de control puedes llamarlo tambien index o la forma de iniciar sesion de un usuario o un correo pondriamos ("||") and && getTipousuario=item.tipoUsuario extraido de la base de datos.
       return usuarioEncontrado
@@ -18,12 +21,13 @@ function Login(){
    
    function iniciarSesion(){
     if(buscarUsuario()){
-            alert('Bienvenido')
+            alertaRedireccion(redireccion,"Bienvenidos al sistema",'/home')//() agregar este tabulador. muy importante.porque aparece pero se le tiene que agregar , analizar el buscarUsuario().nombre 
     }else{
-        alert("usuario y/o contrasena incorrecta o no existe")
+        alertError()
 
     }
     }
+    // si no le mando un mensaje especifico. siepre se redicionara en lo mismo
     
    
    return( 
