@@ -1,6 +1,6 @@
 import './Home.css'
-import Contenido from './components/Contenido'
-import MenuLateral from './components/MenuLateral'
+import Contenido from '../components/Contenido'
+import MenuLateral from '../components/MenuLateral'
 
 const Home = () => {
   return (

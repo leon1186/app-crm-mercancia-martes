@@ -1,5 +1,5 @@
 import Login from '../pages/Login'
-import Home from '../Home'
+import Home from '../pages/Home'
 export let enrutador =[
     {
         path:'/',// recuerda que aqui se necesita por lo menos tener un slash en el path dentro de los objetos 
