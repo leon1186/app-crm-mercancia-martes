@@ -1,7 +1,10 @@
 
 // comienza a comprobar en la pagina web los datos correspondientes como usuario y constrasena son los dos dos unicos creados  
 // esto es un tipo de exportacion nombrada .. recordar eso y export default 
- export const usuarios = [
+ 
+
+
+export const usuarios = [
 
     {
   

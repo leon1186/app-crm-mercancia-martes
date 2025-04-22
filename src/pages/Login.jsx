@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { usuarios } from '../services/database'
 import './Login.css'
-import { alertaRedireccion,alertError } from '../helpers/funciones'
+import { alertaRedireccion,alertError,generarToken } from '../helpers/funciones'// nos ahorramos lineas de codigo.
 import { useNavigate } from 'react-router-dom'
 // rafce-> crea un componente funcional arrow.
 // rfce-> crea un compnente functional regular.
@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 //console.log(usuarios) para comprobar que los datos estan presentes en la web
 
 function Login(){
+    console.log(generarToken());
    const [getUser,setUser]=useState()// esta linea de codigo se hace por cada valor que ingreses por teclado.
    const [getPassword,setPassword]=useState()// esta linea de codigo se hace por cada valor que ingreses por teclado.el metodo get es para consultar a una base de datos.
    //const [getEmail,setEmail]=useState("correo")// esta linea de codigo se hace por cada valor que ingreses por teclado.
@@ -21,6 +22,9 @@ function Login(){
    
    function iniciarSesion(){
     if(buscarUsuario()){
+            let token=generarToken();//"token"-> llave , clave ,acceso
+            localStorage.setItem("token",token);// para manipular,almacenar,guardar.. es importante ponerle en el set 
+            localStorage.setItem("usuario",JSON.stringify(buscarUsuario()));//buscarUsuario()----> me sale object object 
             alertaRedireccion(redireccion,"Bienvenidos al sistema",'/home')//() agregar este tabulador. muy importante.porque aparece pero se le tiene que agregar , analizar el buscarUsuario().nombre 
     }else{
         alertError()
