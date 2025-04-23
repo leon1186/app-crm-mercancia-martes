@@ -17,5 +17,5 @@ export let enrutador =[
  //   enrutador
 //}
 
-// estos son los tres tipos de exportacion 
+// estos son los tres tipos de exportacion d
 // export default enrutador as well
