@@ -22,12 +22,12 @@ export function alertaRedireccion(redireccion, mensaje, ruta) {
   });
 }
 
-export function alertError() {
+export function alertGeneral(titulo, mensaje, icono) {
   Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text: "Something went wrong!",
-    footer: '<a href="#">Why do I have this issue?</a>',
+    icon: icono, //"error"
+    title: titulo, //"Oops..."
+    text: mensaje, //"Something went wrong!"
+    // footer: '<a href="#">Why do I have this issue?</a>',
   });
 }
 export function generarToken() {
