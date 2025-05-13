@@ -30,7 +30,7 @@ function Login() {
   function getUsuarios() {
     //fetch(apiUsuario).then((response)=>console.log(response)) //esto es para mirara completamente la respuesta lo que nos
     // interesa es el json donde viene el contenido
-    fetch(apiUsuario)
+    fetch(apiUsuario) //estamos hacienfo un peticion tipo fetch
       .then((response) => response.json())
       .then((data) => setUsuarios(data))
       .catch((error) => console.log(error));

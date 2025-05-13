@@ -3,7 +3,7 @@ import { alertaRedireccion } from "../helpers/funciones";
 
 const MenuLateral = () => {
   let redireccion = useNavigate();
-  let usuarioLogueado = JSON.stringify(localStorage.getItem("usuario"));
+  let usuarioLogueado = JSON.parse(localStorage.getItem("usuario")); // stringify cuando mando, y parse cuando traigo OJO
 
   function cerrarSesion() {
     localStorage.removeItem("token");
